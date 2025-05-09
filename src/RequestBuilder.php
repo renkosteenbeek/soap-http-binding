@@ -184,7 +184,7 @@ class RequestBuilder
         $headers = [];
         $headers['Content-Length'] = $this->soapMessage->getSize();
         $headers['SOAPAction'] = $this->soapAction;
-        $headers['Content-Type'] = 'text/xml; charset="utf-8"';
+        $headers['Content-Type'] = 'text/xml; charset=utf-8';
         return $headers;
     }
 
@@ -199,7 +199,7 @@ class RequestBuilder
         $headers = [];
         if ($this->httpMethod == 'POST') {
             $headers['Content-Length'] = $this->soapMessage->getSize();
-            $headers['Content-Type'] = 'application/soap+xml; charset="utf-8"' . '; action="' . $this->soapAction . '"';
+            $headers['Content-Type'] = 'application/soap+xml; charset=utf-8' . '; action=' . $this->soapAction;
         } else {
             $headers['Accept'] = 'application/soap+xml';
         }
